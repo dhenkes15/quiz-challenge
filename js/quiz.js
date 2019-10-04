@@ -1,12 +1,13 @@
 var questionsAnswers = [
-  ['What is the capital of texas?', 'Austin'],
-  ['How many continents are in the world?', 7],
-  ['Which team did the Chicago Cubs play in the 1945 World Series?', 'Detroit Tigers']
+  ['What is the capital of texas?', 'austin'],
+  ['How many continents are in the world?', '7'],
+  ['Which team did the Chicago Cubs play in the 1945 World Series?', 'detroit tigers']
 ]
 var answer=' ';
 var correct=' ';
 var incorrect=' ';
 function print(message) {
+  
   document.write(message);
 }
 
