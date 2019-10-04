@@ -1,26 +1,34 @@
 var questionsAnswers = [
-  ['What is the capital of texas?', 'austin'],
+  ['What is the capital of Texas?', 'austin'],
   ['How many continents are in the world?', '7'],
   ['Which team did the Chicago Cubs play in the 1945 World Series?', 'detroit tigers']
 ]
-var answer=' ';
-var correct=' ';
-var incorrect=' ';
-function print(message) {
-  
-  document.write(message);
+var question;
+var answer;
+var response;
+var correctAnswer = [ ];
+var wrongAnswer = [ ];
+function printArray(list) {
+  var html = '<ol>';
+  for (var i = 0; i < list.length; i += 1) {
+    html += '<li>' + list[i] + '</li>';
+  }
+  html += '</ol>';
+  document.write(html);
 }
 
-for ( i = 0; i < questionsAnswers.length; i += 1) {
-  answer = prompt(questionsAnswers[i][0]);
-  answer.toLowerCase();
-  if (answer === questionsAnswers[i][1]) {
-    correct += questionsAnswers[i][0];
+for ( var i = 0; i < questionsAnswers.length; i += 1) {
+  question = questionsAnswers[i][0];
+  answer = questionsAnswers[i][1];
+  response = prompt(question);
+  response.toLowerCase();
+  if (response === answer) {
+    correctAnswer.push(question);
   } else {
-    incorrect += questionsAnswers[i][0];
+    wrongAnswer.push(question);
   }
 }
 document.write('<h1><strong>You got the following questions right: </strong></h1>');
-print(correct);
+printArray(correctAnswer);
 document.write('<h1><strong>You got the following questions wrong: </strong></h1>');
-print(incorrect);
+printArray(wrongAnswer);
